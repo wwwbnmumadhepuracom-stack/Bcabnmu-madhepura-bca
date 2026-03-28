@@ -3,42 +3,38 @@
 <head>
 <title>Marksheet</title>
 <style>
-body{
-margin:0;
-text-align:center;
-font-family:Segoe UI;
-background:#e6f2ff;
-}
-.header{
-background:#001233;
+body{text-align:center;font-family:Arial;background:#f2f2f2;}
+img{width:80%;margin-top:30px;box-shadow:0 0 20px black;}
+button{
+padding:10px 20px;
+margin:20px;
+background:#002147;
 color:white;
-padding:15px;
-font-size:22px;
-}
-.right{
-position:absolute;
-right:20px;
-top:15px;
-color:yellow;
-}
-img{
-width:80%;
-margin-top:30px;
-box-shadow:0 0 20px gray;
-border-radius:8px;
+border:none;
+cursor:pointer;
 }
 </style>
 </head>
+
 <body>
 
-<div class="header">
-BNMU UNIVERSITY
-<div class="right">BCA</div>
-</div>
-
-<h2>Student Marksheet</h2>
+<h2>BNMU UNIVERSITY - Marksheet</h2>
 
 <img src="IMG_20260312_142131.jpg">
+
+<br>
+
+<button onclick="window.print()">Print</button>
+<button onclick="downloadPDF()">Download PDF</button>
+
+<script>
+function downloadPDF(){
+var link=document.createElement('a');
+link.href="IMG_20260312_142131.jpg";
+link.download="Marksheet.jpg";
+link.click();
+}
+</script>
 
 </body>
 </html>
