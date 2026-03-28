@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marksheet Form</title>
+<style>
+body{
+font-family:Segoe UI;
+background:#eef2f3;
+text-align:center;
+padding-top:60px;
+}
+form{
+background:white;
+width:350px;
+margin:auto;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 15px gray;
+}
+input{
+width:100%;
+padding:8px;
+margin:8px 0;
+}
+button{
+padding:10px 20px;
+background:#002147;
+color:white;
+border:none;
+width:100%;
+}
+</style>
+</head>
+<body>
+
+<h2>BNMU UNIVERSITY <span style="float:right;margin-right:20px;">BCA</span></h2>
+
+<form onsubmit="return go()">
+<input type="text" placeholder="Roll Number" required>
+<input type="text" placeholder="Registration Number" required>
+<input type="text" value="shivam186" required>
+<input type="password" value="shivam@@" required>
+<input type="email" placeholder="Email ID" required>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+function go(){
+window.location="View.html";
+return false;
+}
+</script>
+
+</body>
+</html>
