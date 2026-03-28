@@ -139,19 +139,6 @@ text-align:center;
 margin-bottom:20px;
 }
 
-/* NOTE FILE CONTENT */
-.note{
-background:white;
-color:black;
-margin:20px auto;
-width:80%;
-max-width:700px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 15px gray;
-white-space:pre-wrap;
-}
-
 </style>
 </head>
 
@@ -193,11 +180,6 @@ white-space:pre-wrap;
 <p>Bhupendra Narayan Mandal University (BNMU) provides quality education and excellence in academic performance.</p>
 </div>
 
-<!-- NOTE FILE CONTENT -->
-<div class="note" id="noteContent">
-Loading note...
-</div>
-
 <script>
 
 function login(){
@@ -214,16 +196,6 @@ alert("Invalid Login Details");
 function goHome(){
 window.location="index.html";
 }
-
-/* Load shivam note.txt file */
-fetch("shivam note.txt")
-.then(response => response.text())
-.then(data => {
-document.getElementById("noteContent").innerText = data;
-})
-.catch(error => {
-document.getElementById("noteContent").innerText = "Note file not found.";
-});
 
 </script>
 
