@@ -1,100 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>BNMU University - Login</title>
+<title>BNMU Login</title>
 <style>
 body{
 margin:0;
-font-family:Segoe UI;
-background:linear-gradient(135deg,#0f2027,#2c5364);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
+font-family:Arial;
+background:linear-gradient(135deg,#002147,#004080);
 color:white;
 }
+
+/* HEADER */
 .header{
+position:relative;
+text-align:center;
+overflow:hidden;
+}
+
+.header img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.header h1{
+position:absolute;
+top:20px;
+left:20px;
+}
+
+.header h2{
+position:absolute;
+top:20px;
+right:20px;
+}
+
+/* Moving Light Effect */
+.header::after{
+content:"";
 position:absolute;
 top:0;
+left:-100%;
 width:100%;
-background:#001233;
-padding:15px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+animation:light 3s infinite;
 }
-.right{
-position:absolute;
-right:20px;
-top:15px;
-color:yellow;
+
+@keyframes light{
+0%{left:-100%;}
+100%{left:100%;}
 }
+
+/* Login Box */
 .box{
+width:320px;
+margin:50px auto;
 background:white;
 color:black;
-padding:30px;
-width:350px;
-border-radius:12px;
-box-shadow:0 0 25px rgba(0,0,0,0.4);
-animation:slide 1s ease;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 20px cyan;
 }
-@keyframes slide{
-from{transform:translateY(40px);opacity:0;}
-to{transform:translateY(0);opacity:1;}
-}
+
 input{
 width:100%;
 padding:10px;
 margin:10px 0;
-border-radius:6px;
-border:1px solid #ccc;
 }
+
 button{
 width:100%;
 padding:10px;
 background:#002147;
 color:white;
 border:none;
-border-radius:6px;
 cursor:pointer;
 }
-button:hover{
-background:#004aad;
-}
+
 a{
 display:block;
-margin-top:10px;
 text-align:center;
+margin-top:10px;
 }
 </style>
 </head>
+
 <body>
 
 <div class="header">
-BNMU UNIVERSITY
-<div class="right">BCA</div>
+<img src="header.jpg">
+<h1>BNMU UNIVERSITY</h1>
+<h2>BCA</h2>
 </div>
 
 <div class="box">
-<h2>Student Login</h2>
-
-<input type="text" id="user" placeholder="Username">
+<h3 align="center">Student Login</h3>
+<input type="text" id="num" placeholder="Mobile Number">
 <input type="password" id="pass" placeholder="Password">
-
 <button onclick="login()">Login</button>
-
-<a href="Registration.html">New Registration?</a>
+<a href="Registration.html">New Registration</a>
 </div>
 
 <script>
 function login(){
-var u=document.getElementById("user").value;
+var n=document.getElementById("num").value;
 var p=document.getElementById("pass").value;
 
-if(u==="shivam186" && p==="shivam@@"){
+if(n=="7280804309" && p=="shivam@@"){
 window.location="dashboard.html";
 }else{
-alert("Invalid Login Details");
+alert("Wrong Details");
 }
 }
 </script>
