@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Marksheet Form</title>
+<title>Marksheet Verification</title>
 <style>
-body{
-font-family:Segoe UI;
-background:#eef2f3;
-text-align:center;
-padding-top:60px;
+body{margin:0;font-family:Arial;background:#eef2f3;}
+.header{position:relative;overflow:hidden;}
+.header img{width:100%;height:150px;object-fit:cover;}
+.header h1{position:absolute;top:20px;left:20px;color:white;}
+.header h2{position:absolute;top:20px;right:20px;color:white;}
+.header::after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+animation:light 3s infinite;
 }
-form{
-background:white;
+@keyframes light{
+0%{left:-100%;}
+100%{left:100%;}
+}
+.box{
 width:350px;
-margin:auto;
-padding:25px;
+margin:40px auto;
+background:white;
+padding:20px;
 border-radius:10px;
 box-shadow:0 0 15px gray;
 }
@@ -23,31 +36,50 @@ padding:8px;
 margin:8px 0;
 }
 button{
-padding:10px 20px;
+width:100%;
+padding:10px;
 background:#002147;
 color:white;
 border:none;
-width:100%;
+cursor:pointer;
 }
 </style>
 </head>
+
 <body>
 
-<h2>BNMU UNIVERSITY <span style="float:right;margin-right:20px;">BCA</span></h2>
+<div class="header">
+<img src="header.jpg">
+<h1>BNMU UNIVERSITY</h1>
+<h2>BCA</h2>
+</div>
 
-<form onsubmit="return go()">
-<input type="text" placeholder="Roll Number" required>
-<input type="text" placeholder="Registration Number" required>
-<input type="text" value="shivam186" required>
-<input type="password" value="shivam@@" required>
-<input type="email" placeholder="Email ID" required>
-<button type="submit">Submit</button>
-</form>
+<div class="box">
+<h3 align="center">Enter Details</h3>
+
+<input type="text" id="roll" placeholder="Roll Number">
+<input type="text" id="reg" placeholder="Registration Number">
+<input type="text" id="user" placeholder="Username">
+<input type="password" id="pass" placeholder="Password">
+<input type="email" id="email" placeholder="Email">
+
+<button onclick="check()">Open Marksheet</button>
+
+</div>
 
 <script>
-function go(){
+function check(){
+if(
+document.getElementById("roll").value=="562" &&
+document.getElementById("reg").value=="1436" &&
+document.getElementById("user").value=="shivam186" &&
+document.getElementById("pass").value=="shivam@@" &&
+document.getElementById("email").value=="shivamhg186@gmail.com"
+){
 window.location="View.html";
-return false;
+}else{
+alert("Wrong Details");
+}
 }
 </script>
 
