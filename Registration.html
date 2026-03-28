@@ -3,21 +3,14 @@
 <head>
 <title>Registration</title>
 <style>
-body{
-margin:0;
-font-family:Segoe UI;
-background:linear-gradient(135deg,#1e3c72,#2a5298);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
+body{font-family:Arial;background:#eef2f3;text-align:center;}
 .box{
-background:white;
-padding:30px;
 width:350px;
-border-radius:12px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
+margin:100px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 15px gray;
 }
 input{
 width:100%;
@@ -30,27 +23,20 @@ padding:10px;
 background:#002147;
 color:white;
 border:none;
+cursor:pointer;
 }
 </style>
 </head>
 <body>
 
 <div class="box">
-<h2>Student Registration</h2>
+<h3>New Registration</h3>
 <input type="text" placeholder="Full Name">
 <input type="email" placeholder="Email">
-<input type="text" placeholder="Mobile Number">
-<input type="text" placeholder="Create Username">
-<input type="password" placeholder="Create Password">
-<button onclick="done()">Register</button>
+<input type="text" placeholder="Mobile">
+<input type="password" placeholder="Password">
+<button>Register</button>
 </div>
-
-<script>
-function done(){
-alert("Registration Successful");
-window.location="index.html";
-}
-</script>
 
 </body>
 </html>
